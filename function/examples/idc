@@ -1,0 +1,9 @@
+#!/bin/sh
+
+IDST=`dirname $0`/../..
+
+if test -x $IDST/object/stage2/idc; then
+  exec $IDST/object/stage2/idc -B $IDST/object/stage2/ -I$IDST/function/objects -I$IDST/function/jolt-burg $*
+else
+  exec idc $*
+fi
